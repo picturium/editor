@@ -1,0 +1,62 @@
+{
+  "name": "@lamka02sk/picturium-editor",
+  "version": "0.1.0",
+  "description": "Embeddable visual editor for the picturium image server: crop, resize, filter and watermark an image, preview it live and get the finished URL.",
+  "keywords": [
+    "picturium",
+    "image",
+    "editor",
+    "crop",
+    "resize",
+    "image-processing",
+    "url-builder",
+    "widget",
+    "i18n"
+  ],
+  "license": "MIT",
+  "author": "lamka02sk",
+  "homepage": "https://picturium.cc/docs/editor",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/picturium/editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/picturium/editor/issues"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/picturium-editor.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/picturium-editor.js"
+    },
+    "./style.css": "./dist/picturium-editor.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "rm -rf dist && vite build && tsc -p tsconfig.types.json",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run check && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.3.0",
+    "@fontsource/vt323": "^5.3.0",
+    "preact": "^11.2.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  }
+}
